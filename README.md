@@ -27,11 +27,29 @@ docker run -d --name webserver -p 80:80 nginx:latest
 
 ### 이미지 빌드 명령어 실행
 ```bash
-docker build -t nginx:test-nginx .
+docker build -t nginx:0.0.1 .
 ```
 
 ### 이미지 기반 container 실행
 ```bash
 docker run -d -p 8080:80 --name webserver nginx:test-nginx
+```
+
+
+## docker-compose.yml
+> 컨테이너들의 실행순서 관리
+
+```yaml
+version: "3.0"
+
+services:
+  nginx:
+    container_name: webserver
+    image: nginx:0.0.1
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
 ```
 
