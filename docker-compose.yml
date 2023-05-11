@@ -2,10 +2,13 @@ version: "3.0"
 
 services:
   nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: webserver
     image: nginx:0.0.1
     restart: always
     ports:
-      - "8080:80"
+      - "8083:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
