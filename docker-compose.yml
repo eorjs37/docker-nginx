@@ -9,7 +9,6 @@ services:
     image: nginx:0.0.1
     restart: always
     ports:
-      - "8084:80"
       - target: 80
         published: 8084
         protocol: tcp
