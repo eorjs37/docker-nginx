@@ -9,9 +9,9 @@ services:
     image: nginx:0.0.1
     restart: always
     ports:
-      - "8083:80"
+      - "8084:80"
       - target: 80
-        published: 8083
+        published: 8084
         protocol: tcp
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
