@@ -10,7 +10,7 @@ services:
     restart: always
     ports:
       - target: 80
-        published: 8084
+        published: 8081
         protocol: tcp
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
